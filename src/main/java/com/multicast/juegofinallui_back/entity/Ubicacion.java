@@ -3,8 +3,8 @@ package com.multicast.juegofinallui_back.entity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Cascade;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Ubicaciones {
+public class Ubicacion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,8 +27,12 @@ public class Ubicaciones {
     @Column(name = "longitud")
     private Double longitud;
 
+    @Column(name = "nivel")
+    private Integer nivel;
+
     @ElementCollection
     @CollectionTable(name = "ubicaciones_imagenes", joinColumns = @JoinColumn(name = "ubicacion_id"))
+    @Cascade(org.hibernate.annotations.CascadeType.REMOVE)
     @Column(name = "imagen")
     private List<String> imagenes;
 
