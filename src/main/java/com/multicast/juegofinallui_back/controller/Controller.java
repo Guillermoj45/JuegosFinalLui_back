@@ -26,6 +26,11 @@ public class Controller {
         return servicio.saveUbicacion(ubicacion);
     }
 
+    @GetMapping("/resumen/{id}")
+    public Participante getResumen(@PathVariable Integer id){
+        return servicio.getResumen(id);
+    }
+
     @PostMapping("/participante")
     public Participante saveParticipante(@RequestBody ParticipanteDTO participanteDTO){
         return servicio.saveParticipantes(participanteDTO);

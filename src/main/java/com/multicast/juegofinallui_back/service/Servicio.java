@@ -41,4 +41,8 @@ public class Servicio {
     public Participante saveParticipante(Participante participante){
         return participantesRepository.save(participante);
     }
+
+    public Participante getResumen(Integer id) {
+        return participantesRepository.findById(id).orElse(null);
+    }
 }
