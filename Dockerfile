@@ -24,4 +24,4 @@ RUN ./mvnw package
 EXPOSE 8080:8080
 
 # Run the application
-ENTRYPOINT ["java", "-jar", "target/PowerZone_back-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "target/JuegoFinalLui_back-0.0.1-SNAPSHOT.jar"]
